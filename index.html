@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-area">
+            <i class="fa-solid fa-location-dot"></i>
+            <input type="text" placeholder="Enter your location" id="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="weather-body" id="weather-body">
+            <div class="weather-area">
+                <div class="location" id="location">서울</div> 
+                <div class="status" id="status">대체로 흐림</div>
+                <img src="/img/cloudy.png">
+                <div class="weather-details">
+                    <div class="temperature" id="temperature">20도</div>
+                    <div class="wind-chill-temperature" id="wind-chill-temperature"> 18도</div>
+                </div>
+            </div>
+            <div class="winds">
+                <p>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="humidity">습도</span>
+                </p>
+                <p>
+                    <i class="fa-solid fa-wind" ></i>
+                    <span id="wind-speed">풍량</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/73a6270b53.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
