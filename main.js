@@ -4,6 +4,26 @@
 
 let data ="";
 let weatherInfo = [];
+let searchButton = document.getElementById("search-button")
+
+
+
+const searchCity = async() => {
+    
+    let searchKeyword = document.getElementById("search-input").value
+    console.log(searchKeyword)
+
+    let url = new URL(`https://api.openweathermap.org/data/2.5/weather?q=${searchKeyword}&appid=6a54d48b8ef9b88321e9c3a665c07f83`)
+    let response = await fetch(url)
+    data = await response.json()
+
+
+    weatherInfo = [];
+    weatherInfo.push(data)
+    console.log(data)
+    render()
+
+}
 
 
 const getWeather = async() =>{
@@ -46,4 +66,6 @@ const render = () => {
 }
 
 
+
+searchButton.addEventListener("click",searchCity)
 getWeather()
