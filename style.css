@@ -1,76 +1,95 @@
 body{
     margin: 0px;
     height: 100vh;
-    background-color: #AAC4FF;
+    background-color: #D9D9D9;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family:'Poppins', sans-serif;;
 }
+body p{
+    margin:0;
+}
 
 .container{
     width: 500px;
-    height: 85%;
-    background-color: #fff;
-    border-radius: 14px;
+    height: 90%;
+    background: linear-gradient(to bottom, #5395ED, #5DE0E6);
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 1em 0;
 }
 
+.main-block{
+    width: 100%;
+    height: 50%;
+    border-radius: 30px 30px 0 0;
+    color:white;
+    display: flex;
+    justify-content: center;
+
+}
+
 .search-area{
     width: 100%;
-    height: min-content;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
+    margin-top: 1.5em;
 }
 
 .search-area i{
     padding:10px;
-    font-size:1.5em;
+    font-size:1.3em;
 }
 
 
 #search-input{
-    width: 60%;
-    font-size: 20px;
+    width: 90%;
+    height: 100%;
+    font-size: 1.2em;
     text-transform: capitalize;
+    outline:none;
     border: none;
+    border-radius: 30px;
+    padding: 6px 0 6px 20px;
+    margin-right : 2em;
 }
 
 #search-input:focus{
     outline: none;
-    border-bottom: 1px solid grey;
 }
 
 #search-button{
     background-color: #fff;
     border: none;
-    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
 }
 
+.weather-body{
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-rows: auto;
+    row-gap: 0.5em;
 
-.weather-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em 0;
 }
 
 .weather-details{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
 }
 
-.weather-area img{
-    width:30%;
+.weather-body img{
+    width:40%;
     margin: 1.5em 0;
 }
 
@@ -78,30 +97,114 @@ body{
 .location{
     font-size: 2em;
     font-weight: 800;
-    margin-top: 0.5rem;
+}
+.location i{
+    font-size: 0.8em;
 }
 
 .status{
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 500;
-    margin-bottom: 0.5rem;
 }
 
 
 .temperature{
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 800;
-    margin-top: 0.5rem;
+    text-align: right;
+
 
 }
 
-.wind-chill-temperature{
-    margin-bottom: 0.5rem;
+.high-low{
+    text-align: right;
 }
 
-.winds{
+
+.real-feel-temperature{
+    text-align: right;
+    font-size: 1em;
+}
+
+.others{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.others>div:first-child{
     display: flex;
-    justify-content: space-around;
-    margin: 1em 0 ;
+    flex-direction: column;
+    justify-content: flex-start;
+    
 }
 
+.others>div:last-child>p{
+    text-align: right;
+}
+
+.sub-block{
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1em;
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 1em;
+}
+
+.sub-block img{
+    width: 8%;
+    padding: 0 10px;
+}
+.days{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+#day{
+    width: 60px;
+}
+
+#hours {
+ width:25px;
+}
+
+.days>p:last-child{
+    width: fit-content;
+    text-align: right;
+}
+
+@media screen and (max-width:400px) {
+
+    .container{
+        height: 90%;
+    }
+    
+    .weather-body{
+        margin-top: 2em;
+    }
+
+    .days{
+        padding:0.5em;
+    }
+
+    .others{
+        font-size: 0.8em;
+    }
+
+    #search-input{
+        font-size: 1em;
+    }
+
+    .location, .temperature{
+        font-size: 2em;
+    }
+}
